@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #05010d;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05010d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #d946ef, #7c3aed);
+  border-radius: 10px;
+}
+
+::selection {
+  background: #d946ef;
+  color: #ffffff;
+}
+
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes neonPulse {
+  0% { filter: drop-shadow(0 0 5px rgba(217, 70, 239, 0.3)); }
+  50% { filter: drop-shadow(0 0 15px rgba(217, 70, 239, 0.6)); }
+  100% { filter: drop-shadow(0 0 5px rgba(217, 70, 239, 0.3)); }
+}
+
+.neon-glow {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 70, 239, 0.1);
+}

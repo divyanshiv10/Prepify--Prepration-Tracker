@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset and Global Styles - Obsidian Black */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* Absolute Black - No Blue */
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar - Molten Orange/Amber */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ea580c, #f59e0b);
+  border-radius: 10px;
+}
+
+/* Solar Text Selection */
+::selection {
+  background: #f97316;
+  color: #000000;
+}
+
+/* Force Three.js Canvas to stay in the background */
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom Forge Animations for the Ember Theme */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px rgba(249, 115, 22, 0.2); }
+  50% { text-shadow: 0 0 25px rgba(249, 115, 22, 0.5); }
+  100% { text-shadow: 0 0 10px rgba(249, 115, 22, 0.2); }
+}
+
+.glow-text {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Fade In for Goal Cards */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.goal-card {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Topic Node Pop-in */
+@keyframes nodePop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.topic-node {
+  animation: nodePop 0.4s ease-out forwards;
+}
